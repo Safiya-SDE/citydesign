@@ -48,12 +48,21 @@
             text-align: center;
         }
 
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            margin-bottom: 10px;
+        }
+
         .menu a {
             background-color: #444444;
             color: #ffffff;
             display: block;
             padding: 10px;
-            margin: 10px 0;
             text-decoration: none;
             border-radius: 5px;
         }
@@ -116,6 +125,18 @@
             color: #ffffff;
         }
 
+        .highlight {
+            font-family: 'Times New Roman', serif;
+        }
+
+        .highlight del {
+            color: grey;
+        }
+
+        .highlight ins {
+            color: green;
+        }
+
         @media only screen and (max-width: 620px) {
             .menu, .main, .right {
                 width: 100%;
@@ -132,31 +153,20 @@
 
 <div class="container">
     <div class="menu">
-        <ul style="list-style-type: none; padding: 0; margin: 0;">
-            <li style="margin-bottom: 10px;">
-                <a href="https://example.com/home" target="_blank" style="display: block; text-decoration: none; background-color: #444444; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center;">Home</a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://example.com/projects" target="_blank" style="display: block; text-decoration: none; background-color: #444444; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center;">Projects</a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a href="https://example.com/about" target="_blank" style="display: block; text-decoration: none; background-color: #444444; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center;">About</a>
-            </li>
-            <li>
-                <a href="https://example.com/contact" target="_blank" style="display: block; text-decoration: none; background-color: #444444; color: #ffffff; padding: 10px; border-radius: 5px; text-align: center;">Contact</a>
-            </li>
+        <ul>
+            <li><a href="https://example.com/home" target="_blank">Home</a></li>
+            <li><a href="https://example.com/projects" target="_blank">Projects</a></li>
+            <li><a href="https://example.com/about" target="_blank">About</a></li>
+            <li><a href="https://example.com/contact" target="_blank">Contact</a></li>
         </ul>
     </div>
-    <div class="main">
-        <!-- Main content here -->
-    </div>
-</div>
 
+    <div class="main">
         <section>
             <h2>🛠️ Course Introduction</h2>
             <ul>
-                <li><strong>Design Analysis and Algorithms</strong>: The course involves designing efficient solutions, keeping time and space complexity in mind.</li>
-                <li><strong>Data Structures and Algorithms currently studying</strong>:</li>
+                <li><strong>Design Analysis and Algorithms:</strong> The course involves designing efficient solutions, keeping time and space complexity in mind.</li>
+                <li><strong>Data Structures and Algorithms currently studying:</strong></li>
                 <ul>
                     <li><strong>Tracing, Hashing</strong></li>
                     <li><strong>DFS, BFS</strong></li>
@@ -164,34 +174,24 @@
                     <li><strong>Sorting Algorithms: Kruskal's, Dijkstra's, Prim's, Floyd's</strong></li>
                 </ul>
             </ul>
-            <ul>
-                <li><strong>Real-Time Applications</strong>: Finding the fastest route, optimizing delivery services, etc.</li>
-                <li>Software Applications: Gaming, Socializing Apps, E-Commerce Platforms, Google Maps, etc.</li>
-            </ul>
-            
-           <div class="main">
-    <section>
-        <blockquote>
-            <p class="highlight">
-                The world is changed.  
-                <del>I feel it everywhere all the time.</del>  
-                I feel it in the water.  
-                <ins>I feel it in the earth.</ins>  
-                I smell it in the air.
-            </p>
-        </blockquote>
-    </section>
-</div>
 
-            
+            <blockquote>
+                <p class="highlight">
+                    The world is changed.  
+                    <del>I feel it everywhere all the time.</del>  
+                    I feel it in the water.  
+                    <ins>I feel it in the earth.</ins>  
+                    I smell it in the air.
+                </p>
+            </blockquote>
+
             <h2>🏙️ Course Project: City Design in Accordance With Sustainability Goals</h2>
             <ul>
-                <li><strong>Problem Definition:</strong>Design a sustainable city of approximately 1500 sq. km, aligned with sustainability goals.</li>
-                <li><strong>Findings From White Paper:</strong></li>
-                
+                <li><strong>Problem Definition:</strong> Design a sustainable city of approximately 1500 sq. km, aligned with sustainability goals.</li>
+                <li><strong>Findings From White Paper:</strong> Key insights and conclusions.</li>
             </ul>
-            
-            <h1><strong>Business case studies for the city design, named *Prakashvan*.</strong></h1>
+
+            <h1>Business case studies for the city design, named *Prakashvan*.</h1>
             <table>
                 <tr>
                     <th>Team Member</th>
@@ -230,91 +230,57 @@
                 </tr>
             </table>
 
-
-            <h1><strong>Course Learning Reflections:</strong></h1>
+            <h1>Course Learning Reflections:</h1>
             <table>
                 <tr>
                     <th>Team Member</th>
                     <th>Business Case Study</th>
                     <th>Country</th>
                 </tr>
-                <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                </tr>
-                <tr>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                </tr>
-                <tr>
-                    <td>Ernst Handel</td>
-                    <td>Roland Mendel</td>
-                    <td>Austria</td>
-                </tr>
-                <tr>
-                    <td>Island Trading</td>
-                    <td>Helen Bennett</td>
-                    <td>UK</td>
-                </tr>
-                <tr>
-                    <td>Laughing Bacchus Winecellars</td>
-                    <td>Yoshi Tannamuri</td>
-                    <td>Canada</td>
-                </tr>
-                <tr>
-                    <td>Magazzini Alimentari Riuniti</td>
-                    <td>Giovanni Rovelli</td>
-                    <td>Italy</td>
-                </tr>
+                <!-- Add more rows here as needed -->
             </table>
-
 
             <h2>🌐 Find Me Online</h2>
             <ul>
-                <li><a href="https://github.com/your-github-username" target="_blank" style="color: #ffffff;">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" style="color: #ffffff;">LinkedIn</a></li>
+                <li><a href="https://github.com/your-github-username" target="_blank">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
             </ul>
 
             <h2>Portfolio Topic</h2>
-<div class="portfolio-table">
-    <table style="width: 100%; border-collapse: collapse; color: #ffffff;">
-        <tr>
-            <th style="text-align: left; padding: 10px; background-color: #555555; border: 1px solid #444444;">Field</th>
-            <th style="text-align: left; padding: 10px; background-color: #555555; border: 1px solid #444444;">Details</th>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #444444;">Course Name</td>
-            <td style="padding: 10px; border: 1px solid #444444;">Algorithmic Problem Solving</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #444444;">Course Code</td>
-            <td style="padding: 10px; border: 1px solid #444444;">Course Code Placeholder</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #444444;">Name</td>
-            <td style="padding: 10px; border: 1px solid #444444;">Your Name</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #444444;">SRN</td>
-            <td style="padding: 10px; border: 1px solid #444444;">Your SRN</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #444444;">Course Instructor</td>
-            <td style="padding: 10px; border: 1px solid #444444;">Instructor Name Placeholder</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #444444;">University</td>
-            <td style="padding: 10px; border: 1px solid #444444;">Your University Name</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #444444;">Portfolio Topic/Domain</td>
-            <td style="padding: 10px; border: 1px solid #444444;">Google</td>
-        </tr>
-    </table>
-</div>
-
+            <table>
+                <tr>
+                    <th>Field</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>Course Name</td>
+                    <td>Algorithmic Problem Solving</td>
+                </tr>
+                <tr>
+                    <td>Course Code</td>
+                    <td>Course Code Placeholder</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Your Name</td>
+                </tr>
+                <tr>
+                    <td>SRN</td>
+                    <td>Your SRN</td>
+                </tr>
+                <tr>
+                    <td>Course Instructor</td>
+                    <td>Instructor Name Placeholder</td>
+                </tr>
+                <tr>
+                    <td>University</td>
+                    <td>Your University Name</td>
+                </tr>
+                <tr>
+                    <td>Portfolio Topic/Domain</td>
+                    <td>Google</td>
+                </tr>
+            </table>
 
             <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
         </section>
@@ -332,6 +298,7 @@
 
 </body>
 </html>
+
 
 
 
