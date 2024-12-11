@@ -1,77 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-* {
-  box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
 
-.menu {
-  float: left;
-  width: 20%;
-  text-align: center;
-}
+        body {
+            color: #ffffff;
+            background-color: #000000;
+        }
 
-.menu a {
-  background-color: #e5e5e5;
-  padding: 8px;
-  margin-top: 7px;
-  display: block;
-  width: 100%;
-  color: black;
-}
+        header {
+            background-color: #1c1c1c;
+            text-align: center;
+            padding: 20px;
+        }
 
-.main {
-  float: left;
-  width: 60%;
-  padding: 0 20px;
-}
+        header h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+        }
 
-.right {
-  background-color: #e5e5e5;
-  float: left;
-  width: 20%;
-  padding: 15px;
-  margin-top: 7px;
-  text-align: center;
-}
+        header p {
+            color: #bbbbbb;
+        }
 
-@media only screen and (max-width: 620px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width: 100%;
-  }
-}
-</style>
+        .container {
+            overflow: auto;
+        }
+
+        .menu, .right, .main {
+            padding: 20px;
+        }
+
+        .menu {
+            float: left;
+            width: 20%;
+            background-color: #333333;
+            text-align: center;
+        }
+
+        .menu a {
+            background-color: #444444;
+            color: #ffffff;
+            display: block;
+            padding: 10px;
+            margin: 10px 0;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .menu a:hover {
+            background-color: #555555;
+        }
+
+        .main {
+            float: left;
+            width: 60%;
+            color: #dddddd;
+        }
+
+        .right {
+            float: left;
+            width: 20%;
+            background-color: #333333;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        footer {
+            background-color: #1c1c1c;
+            text-align: center;
+            padding: 10px;
+            color: #bbbbbb;
+        }
+
+        ul, dl, blockquote {
+            margin-top: 20px;
+        }
+
+        ul li, dl dt, dl dd {
+            margin-bottom: 10px;
+        }
+
+        ul li strong, dl dt {
+            color: #ffffff;
+        }
+
+        @media only screen and (max-width: 620px) {
+            .menu, .main, .right {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-<body style="font-family:Verdana;color:#aaaaaa;">
+<body>
 
-<div style="background-color:#e5e5e5;padding:15px;text-align:center;">
-  <h1>Hello World</h1>
+<header>
+    <h1>Hello, We are a passionate team of Engineers, Working to code better and innovate 👋</h1>
+    <p>Here's a glimpse of our work :)</p>
+</header>
+
+<div class="container">
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="main">
+        <section>
+            <h2>🛠️ Course Introduction</h2>
+            <ul>
+                <li><strong>Design Analysis and Algorithms</strong>: The course Design Analysis and Algorithms is the study of algorithms to solve, design, and implement for us to get an efficient solution. We need to keep in mind time and space complexity when designing. Algorithms are about solving problems by breaking them into smaller and simpler parts.</li>
+                <li><strong>Data Structures and Algorithms currently studying</strong>:</li>
+                <ul>
+                    <li><strong>Tracing, Hashing</strong></li>
+                    <li><strong>DFS, BFS</strong></li>
+                    <li><strong>Trees, Graph</strong></li>
+                    <li><strong>Sorting Algorithm</strong>: Kruskal's, Dijkstra's, Prim's, Floyd's Algorithm</li>
+                </ul>
+            </ul>
+            <ul>
+                <li><strong>Real-Time Applications</strong>: Finding the fastest way home, using delivery apps like Zomato and Swiggy, and their efficient offers.</li>
+                <li>Software Applications: Gaming, Socializing Apps, E-Commerce Platforms, Google Maps, etc.</li>
+            </ul>
+
+            <h2>🚀 Skills</h2>
+            <ul>
+                <li>C++, Python, JavaScript</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Web Development (React.js, Node.js)</li>
+            </ul>
+
+            <h2>🌐 Find Me Online</h2>
+            <ul>
+                <li><a href="https://github.com/your-github-username" target="_blank" style="color: #ffffff;">GitHub</a></li>
+                <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" style="color: #ffffff;">LinkedIn</a></li>
+            </ul>
+
+            <h2>Portfolio Topic</h2>
+            <dl>
+                <dt>Course Name</dt>
+                <dd>Algorithmic Problem Solving</dd>
+
+                <dt>Course Code</dt>
+                <dd>Course Code Placeholder</dd>
+
+                <dt>Name</dt>
+                <dd>Your Name</dd>
+
+                <dt>SRN</dt>
+                <dd>Your SRN</dd>
+
+                <dt>Course Instructor</dt>
+                <dd>Instructor Name Placeholder</dd>
+
+                <dt>University</dt>
+                <dd>Your University Name</dd>
+
+                <dt>Portfolio Topic/Domain</dt>
+                <dd>Google</dd>
+            </dl>
+
+            <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
+        </section>
+    </div>
+
+    <div class="right">
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
 </div>
 
-<div style="overflow:auto">
-  <div class="menu">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-    <a href="#">Link 4</a>
-  </div>
-
-  <div class="main">
-    <h2>Lorum Ipsum</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-  </div>
-
-  <div class="right">
-    <h2>About</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-  </div>
-</div>
-
-<div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">© copyright w3schools.com</div>
+<footer>
+    © 2024 Your Portfolio
+</footer>
 
 </body>
 </html>
-
