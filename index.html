@@ -31,6 +31,24 @@
 
         header p {
             color: #bbbbbb;
+            margin-bottom: 20px;
+        }
+
+        header table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            color: #ffffff;
+        }
+
+        header table th, header table td {
+            border: 1px solid #444444;
+            padding: 10px;
+            text-align: left;
+        }
+
+        header table th {
+            background-color: #555555;
         }
 
         .container {
@@ -116,8 +134,34 @@
             color: #ffffff;
         }
 
+        .highlight {
+            font-family: 'Times New Roman', serif;
+        }
+
+        .highlight del {
+            color: grey;
+        }
+
+        .highlight ins {
+            color: green;
+        }
+
+        .portfolio-table {
+            margin-top: 20px;
+        }
+
+        .portfolio-table dl dt, .portfolio-table dl dd {
+            display: inline-block;
+            width: 48%;
+        }
+
         @media only screen and (max-width: 620px) {
             .menu, .main, .right {
+                width: 100%;
+            }
+
+            .portfolio-table dl dt, .portfolio-table dl dd {
+                display: block;
                 width: 100%;
             }
         }
@@ -127,7 +171,25 @@
 
 <header>
     <h1>Hello, We are a passionate team of Engineers, Working to code better and innovate 👋</h1>
-    <p>Here's a glimpse of our work :)</p>
+    <p>Here's a glimpse of our work:</p>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Programming Languages</td>
+            <td>C++, Python, JavaScript</td>
+        </tr>
+        <tr>
+            <td>Technologies</td>
+            <td>React.js, Node.js</td>
+        </tr>
+        <tr>
+            <td>Applications</td>
+            <td>Google Maps, Zomato, Swiggy</td>
+        </tr>
+    </table>
 </header>
 
 <div class="container">
@@ -140,144 +202,33 @@
 
     <div class="main">
         <section>
-            <h2>🛠️ Course Introduction</h2>
-            <ul>
-                <li><strong>Design Analysis and Algorithms</strong>: The course involves designing efficient solutions, keeping time and space complexity in mind.</li>
-                <li><strong>Data Structures and Algorithms currently studying</strong>:</li>
-                <ul>
-                    <li><strong>Tracing, Hashing</strong></li>
-                    <li><strong>DFS, BFS</strong></li>
-                    <li><strong>Trees, Graph</strong></li>
-                    <li><strong>Sorting Algorithms: Kruskal's, Dijkstra's, Prim's, Floyd's</strong></li>
-                </ul>
-            </ul>
-            <ul>
-                <li><strong>Real-Time Applications</strong>: Finding the fastest route, optimizing delivery services, etc.</li>
-                <li>Software Applications: Gaming, Socializing Apps, E-Commerce Platforms, Google Maps, etc.</li>
-            </ul>
-
-<p>
-  The world is changed. 
-  <del>I feel it everywhere all the time.</del>  
-  I feel it in the water.
-  <ins>I feel it in the earth.</ins>
-  I smell it in the air.
-</p>
-            
-            
-            
-            <h2>🏙️ Course Project: City Design in Accordance With Sustainability Goals</h2>
-            <ul>
-                <li><strong>Problem Definition:</strong>Design a sustainable city of approximately 1500 sq. km, aligned with sustainability goals.</li>
-                <li><strong>Findings From White Paper:</strong></li>
-                
-            </ul>
-            
-            <h1><strong>Business case studies for the city design, named *Prakashvan*.</strong></h1>
-            <h3>Team Contributions</h3>
-            <table>
-                <tr>
-                    <th>Team Member</th>
-                    <th>Business Case Study</th>
-                    <th>Country</th>
-                </tr>
-                <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                </tr>
-                <tr>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                </tr>
-                <tr>
-                    <td>Ernst Handel</td>
-                    <td>Roland Mendel</td>
-                    <td>Austria</td>
-                </tr>
-                <tr>
-                    <td>Island Trading</td>
-                    <td>Helen Bennett</td>
-                    <td>UK</td>
-                </tr>
-                <tr>
-                    <td>Laughing Bacchus Winecellars</td>
-                    <td>Yoshi Tannamuri</td>
-                    <td>Canada</td>
-                </tr>
-                <tr>
-                    <td>Magazzini Alimentari Riuniti</td>
-                    <td>Giovanni Rovelli</td>
-                    <td>Italy</td>
-                </tr>
-            </table>
-
-
-            <h1><strong>Course Learning Reflections:</strong></h1>
-            <h3>Questions</h3>
-            <table>
-                <tr>
-                    <th>Team Member</th>
-                    <th>Business Case Study</th>
-                    <th>Country</th>
-                </tr>
-                <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                    <td>Germany</td>
-                </tr>
-                <tr>
-                    <td>Centro comercial Moctezuma</td>
-                    <td>Francisco Chang</td>
-                    <td>Mexico</td>
-                </tr>
-                <tr>
-                    <td>Ernst Handel</td>
-                    <td>Roland Mendel</td>
-                    <td>Austria</td>
-                </tr>
-                <tr>
-                    <td>Island Trading</td>
-                    <td>Helen Bennett</td>
-                    <td>UK</td>
-                </tr>
-                <tr>
-                    <td>Laughing Bacchus Winecellars</td>
-                    <td>Yoshi Tannamuri</td>
-                    <td>Canada</td>
-                </tr>
-                <tr>
-                    <td>Magazzini Alimentari Riuniti</td>
-                    <td>Giovanni Rovelli</td>
-                    <td>Italy</td>
-                </tr>
-            </table>
-
-
-            <h2>🌐 Find Me Online</h2>
-            <ul>
-                <li><a href="https://github.com/your-github-username" target="_blank" style="color: #ffffff;">GitHub</a></li>
-                <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" style="color: #ffffff;">LinkedIn</a></li>
-            </ul>
+            <p class="highlight">
+                The world is changed.
+                <del>I feel it everywhere all the time.</del>  
+                I feel it in the water.
+                <ins>I feel it in the earth.</ins>
+                I smell it in the air.
+            </p>
 
             <h2>Portfolio Topic</h2>
-            <dl>
-                <dt>Course Name</dt>
-                <dd>Algorithmic Problem Solving</dd>
-                <dt>Course Code</dt>
-                <dd>Course Code Placeholder</dd>
-                <dt>Name</dt>
-                <dd>Your Name</dd>
-                <dt>SRN</dt>
-                <dd>Your SRN</dd>
-                <dt>Course Instructor</dt>
-                <dd>Instructor Name Placeholder</dd>
-                <dt>University</dt>
-                <dd>Your University Name</dd>
-                <dt>Portfolio Topic/Domain</dt>
-                <dd>Google</dd>
-            </dl>
+            <div class="portfolio-table">
+                <dl>
+                    <dt>Course Name:</dt>
+                    <dd>Algorithmic Problem Solving</dd>
+                    <dt>Course Code:</dt>
+                    <dd>Course Code Placeholder</dd>
+                    <dt>Name:</dt>
+                    <dd>Your Name</dd>
+                    <dt>SRN:</dt>
+                    <dd>Your SRN</dd>
+                    <dt>Course Instructor:</dt>
+                    <dd>Instructor Name Placeholder</dd>
+                    <dt>University:</dt>
+                    <dd>Your University Name</dd>
+                    <dt>Portfolio Topic/Domain:</dt>
+                    <dd>Google</dd>
+                </dl>
+            </div>
 
             <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
         </section>
