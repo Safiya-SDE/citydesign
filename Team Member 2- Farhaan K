@@ -1,1 +1,160 @@
-hello i am farhaan
+//Faraan Kammar//
+//Sustainable City Design//
+//Affordable Housing in Prakashavan//
+
+//C++ Code//
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
+// Merge Sort for sorting edges by weight
+void merge(vector<pair<int, int>>& arr, int left, int right) {
+    if (left >= right) return;
+
+    int mid = left + (right - left) / 2;
+    merge(arr, left, mid);
+    merge(arr, mid + 1, right);
+
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
+
+    vector<pair<int, int>> leftArr(n1), rightArr(n2);
+
+    for (int i = 0; i < n1; i++) leftArr[i] = arr[left + i];
+    for (int i = 0; i < n2; i++) rightArr[i] = arr[mid + 1 + i];
+
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (leftArr[i].first <= rightArr[j].first) {
+            arr[k++] = leftArr[i++];
+        } else {
+            arr[k++] = rightArr[j++];
+        }
+    }
+
+    while (i < n1) arr[k++] = leftArr[i++];
+    while (j < n2) arr[k++] = rightArr[j++];
+}
+
+// Kruskal's Algorithm using Merge Sort
+struct Edge {
+    int u, v, weight;
+    bool operator<(const Edge& other) {
+        return weight < other.weight;
+    }
+};
+
+int findParent(int node, vector<int>& parent) {
+    if (parent[node] == node) return node;
+    return parent[node] = findParent(parent[node], parent);
+}
+
+void unionSets(int u, int v, vector<int>& parent, vector<int>& rank) {
+    int root_u = findParent(u, parent);
+    int root_v = findParent(v, parent);
+    if (root_u != root_v) {
+        if (rank[root_u] > rank[root_v]) parent[root_v] = root_u;
+        else if (rank[root_u] < rank[root_v]) parent[root_u] = root_v;
+        else {
+            parent[root_v] = root_u;
+            rank[root_u]++;
+        }
+    }
+}
+
+void kruskal(int n, vector<Edge>& edges) {
+    vector<int> parent(n), rank(n, 0);
+    for (int i = 0; i < n; i++) parent[i] = i;
+
+    // Sorting edges using Merge Sort
+    merge(edges, 0, edges.size() - 1);
+
+    int mstWeight = 0;
+    for (Edge edge : edges) {
+        int u = edge.u, v = edge.v;
+        if (findParent(u, parent) != findParent(v, parent)) {
+            mstWeight += edge.weight;
+            unionSets(u, v, parent, rank);
+            cout << "Edge: " << u << " - " << v << " | Weight: " << edge.weight << endl;
+        }
+    }
+    cout << "Total weight of MST: " << mstWeight << endl;
+}
+
+// KMP Algorithm for String Matching
+vector<int> KMP_search(const string& text, const string& pattern) {
+    int m = pattern.size();
+    int n = text.size();
+
+    // Preprocess the pattern to create the lps (longest prefix suffix) array
+    vector<int> lps(m, 0);
+    int j = 0; // length of the previous longest prefix suffix
+    for (int i = 1; i < m; i++) {
+        while (j > 0 && pattern[i] != pattern[j]) {
+            j = lps[j - 1];
+        }
+        if (pattern[i] == pattern[j]) {
+            j++;
+        }
+        lps[i] = j;
+    }
+
+    // Perform the KMP search
+    vector<int> matches;
+    j = 0; // index for pattern
+    for (int i = 0; i < n; i++) {
+        while (j > 0 && text[i] != pattern[j]) {
+            j = lps[j - 1];
+        }
+        if (text[i] == pattern[j]) {
+            j++;
+        }
+        if (j == m) {
+            matches.push_back(i - m + 1); // Match found, add to results
+            j = lps[j - 1];
+        }
+    }
+    return matches;
+}
+
+int main() {
+    int n, e;
+    cout << "Enter number of nodes: ";
+    cin >> n;
+    cout << "Enter number of edges: ";
+    cin >> e;
+
+    vector<Edge> edges(e);
+    cout << "Enter edges (u, v, weight): \n";
+    for (int i = 0; i < e; i++) {
+        cin >> edges[i].u >> edges[i].v >> edges[i].weight;
+    }
+
+    // Kruskal's Algorithm
+    kruskal(n, edges);
+
+    // Example usage of KMP (String Matching)
+    string text, pattern;
+    cout << "Enter text: ";
+    cin >> text;
+    cout << "Enter pattern to search for: ";
+    cin >> pattern;
+
+    vector<int> matches = KMP_search(text, pattern);
+
+    if (!matches.empty()) {
+        cout << "Pattern found at positions: ";
+        for (int match : matches) {
+            cout << match << " ";
+        }
+        cout << endl;
+    } else {
+        cout << "Pattern not found in the text." << endl;
+    }
+
+    return 0;
+}
+
+//Reflection//
+
