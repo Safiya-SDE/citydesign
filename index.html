@@ -34,7 +34,8 @@
         }
 
         .container {
-            overflow: auto;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .menu, .right, .main {
@@ -42,8 +43,7 @@
         }
 
         .menu {
-            float: left;
-            width: 20%;
+            flex: 1 1 20%;
             background-color: #333333;
             text-align: center;
         }
@@ -65,6 +65,7 @@
             padding: 10px;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         .menu a:hover {
@@ -72,14 +73,12 @@
         }
 
         .main {
-            float: left;
-            width: 60%;
+            flex: 1 1 60%;
             color: #dddddd;
         }
 
         .right {
-            float: left;
-            width: 20%;
+            flex: 1 1 20%;
             background-color: #333333;
             text-align: center;
             color: #ffffff;
@@ -139,7 +138,7 @@
 
         @media only screen and (max-width: 620px) {
             .menu, .main, .right {
-                width: 100%;
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -151,6 +150,16 @@
     <p>Here's a glimpse of our work :)</p>
 </header>
 
+<div class="container">
+    <div class="menu">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/safiya-h-ba2302243" target="_blank">Team Member 1</a></li>
+            <li><a href="https://github.com/Safiya-SDE/citydesign/blob/main/Farhan.jpg" target="_blank">Team Member 2</a></li>
+            <li><a href="https://github.com/Safiya-SDE/citydesign/blob/main/Portfolio%20Imraan.jpg" target="_blank">Team Member 3</a></li>
+            <li><a href="https://github.com/Safiya-SDE/citydesign/blob/main/Aasim.jpg" target="_blank">Team Member 4</a></li>
+        </ul>
+    </div>
+
     <div class="main">
         <section>
             <h2>🛠️ Course Introduction</h2>
@@ -161,8 +170,7 @@
                     <li><strong>Math Foundations, Tracing, Hashing</strong></li>
                     <li><strong>DFS, BFS</strong></li>
                     <li><strong>Trees, Graph</strong></li>
-                    <li><strong>Alforithms</strong></li>
-                    
+                    <li><strong>Algorithms</strong></li>
                 </ul>
             </ul>
 
@@ -176,30 +184,14 @@
                 </p>
             </blockquote>
 
-            <h2>🏙️ Course Project: City Design in Accordance With UN Sustainability Goals</h2>
+            <h2>🌆️ Course Project: City Design in Accordance With UN Sustainability Goals</h2>
             <ul>
                 <li><strong>Problem Definition:</strong> Design a sustainable city of approximately 1500 sq. km, aligned with sustainability goals.</li>
                 <li><strong>Findings From White Paper:</strong> The white paper titled "Streets – The Living and Life" by Prakash Hegde and Aryan H S focuses on using course projects to bridge theoretical concepts with real-world applications, specifically in the field of algorithms.</li>
-                <li>The document explores the diversity of street life across cities, focusing on cultural, social, and artistic aspects, with a detailed study of Mumbai’s streets in December 2022. It examines the unique dynamics of the city, including challenges like overcrowding and affordability. Indian train travel is highlighted, showcasing a 16-hour journey with cost-saving strategies. Mumbai’s local train system is praised for its efficiency, with frequent services on three major lines (Western, Central, and Harbour) and affordable fares (₹15-25 for 60 km), effectively managing the city's dense population and traffic compared to Bangalore.
-
-<li>The paper also speaks about Matheran, a car-free hill station that offers a peaceful view with fresh air and peaceful architecture. People come there and travel by walking or on horseback. The accommodation here is a bit expensive but it is available at affordable prices. It is a model for an eco-friendly, pollution-free city.</li>
-
-<li>Mumbai’s extremes are highlighted, from upscale Bandra to Dharavi, the world's largest slum. Areas like Andheri host students, while Bandra houses celebrities, reflecting the city’s diverse demographics. Overcrowded transit hubs like Dadar and the growth of slums underline urban planning challenges. Mumbai’s street life showcases a mix of culture, development, and socio-economic disparities, making it a microcosm of India's urban dynamics.</li>
+                <li>The document explores the diversity of street life across cities, focusing on cultural, social, and artistic aspects, with a detailed study of Mumbai’s streets in December 2022. It examines the unique dynamics of the city, including challenges like overcrowding and affordability. Indian train travel is highlighted, showcasing a 16-hour journey with cost-saving strategies. Mumbai’s local train system is praised for its efficiency, with frequent services on three major lines (Western, Central, and Harbour) and affordable fares (₹15-25 for 60 km), effectively managing the city's dense population and traffic compared to Bangalore.</li>
+                <li>Matheran, a car-free hill station that offers a peaceful view with fresh air and peaceful architecture. People come there and travel by walking or on horseback. The accommodation here is a bit expensive but it is available at affordable prices. It is a model for an eco-friendly, pollution-free city.</li>
+                <li>Mumbai’s extremes are highlighted, from upscale Bandra to Dharavi, the world's largest slum. Areas like Andheri host students, while Bandra houses celebrities, reflecting the city’s diverse demographics. Overcrowded transit hubs like Dadar and the growth of slums underline urban planning challenges. Mumbai’s street life showcases a mix of culture, development, and socio-economic disparities, making it a microcosm of India's urban dynamics.</li>
             </ul>
-
-            <div class="container">
-    <div class="menu">
-        <ul>
-            <li><a href="https://www.linkedin.com/in/safiya-h-ba2302243" target="_blank">Team Member 1</a></li>
-            <li><a href="https://github.com/Safiya-SDE/citydesign/blob/main/Farhan.jpg" target="_blank">Team Member 2</a></li>
-            <li><a href="https://github.com/Safiya-SDE/citydesign/blob/main/Portfolio%20Imraan.jpg" target="_blank">Team Member 3</a></li>
-<li><a href="https://github.com/Safiya-SDE/citydesign/blob/main/Aasim.jpg" target="_blank">Team Member 4</a></li>
-        </ul>
-    </div>
-
-
-            </table>
-
 
             <h2>City Design</h2>
             <table>
@@ -209,7 +201,7 @@
                 </tr>
                 <tr>
                     <td>Design Analysis and Algorithms</td>
-                    <td>A  course project wherein we Design, Solve, Implement Efficiently using Algorithms. </td>
+                    <td>A course project wherein we Design, Solve, Implement Efficiently using Algorithms.</td>
                 </tr>
                 <tr>
                     <td>Course Code</td>
@@ -253,9 +245,6 @@
 
 </body>
 </html>
-
-
-
 
 
 
