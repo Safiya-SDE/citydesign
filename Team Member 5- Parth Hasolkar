@@ -1,1 +1,241 @@
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <algorithm>
+#include <climits>
 
+using namespace std;
+
+// Structure for Kruskal's Algorithm
+struct Edge {
+    int u, v, weight;
+};
+
+bool compareEdges(Edge a, Edge b) {
+    return a.weight < b.weight;
+}
+
+int findParent(int node, vector<int> &parent) {
+    if (node == parent[node])
+        return node;
+    return parent[node] = findParent(parent[node], parent);
+}
+
+void unionNodes(int u, int v, vector<int> &parent, vector<int> &rank) {
+    u = findParent(u, parent);
+    v = findParent(v, parent);
+    if (rank[u] < rank[v])
+        parent[u] = v;
+    else if (rank[u] > rank[v])
+        parent[v] = u;
+    else {
+        parent[v] = u;
+        rank[u]++;
+    }
+}
+
+void kruskal(int n, int e) {
+    vector<Edge> edges(e);
+    cout << "Enter each connection as: park1 park2 weight:\n";
+    for (int i = 0; i < e; i++) {
+        cin >> edges[i].u >> edges[i].v >> edges[i].weight;
+    }
+
+    sort(edges.begin(), edges.end(), compareEdges);
+
+    vector<int> parent(n), rank(n, 0);
+    for (int i = 0; i < n; i++) parent[i] = i;
+
+    int mstWeight = 0;
+    cout << "Minimum Spanning Tree edges:\n";
+    for (Edge &edge : edges) {
+        if (findParent(edge.u, parent) != findParent(edge.v, parent)) {
+            mstWeight += edge.weight;
+            cout << edge.u << " - " << edge.v << " (Weight: " << edge.weight << ")\n";
+            unionNodes(edge.u, edge.v, parent, rank);
+        }
+    }
+    cout << "Total Minimum Cost: " << mstWeight << endl;
+}
+
+void dijkstra(int n, int e) {
+    vector<vector<pair<int, int>>> adj(n);
+    cout << "Enter each connection as: park1 park2 weight:\n";
+    for (int i = 0; i < e; i++) {
+        int u, v, weight;
+        cin >> u >> v >> weight;
+        adj[u].push_back({v, weight});
+        adj[v].push_back({u, weight}); // If the graph is undirected
+    }
+
+    int start;
+    cout << "Enter the starting park: ";
+    cin >> start;
+
+    vector<int> dist(n, INT_MAX);
+    dist[start] = 0;
+
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+    pq.push({0, start});
+
+    while (!pq.empty()) {
+        auto [d, u] = pq.top();
+        pq.pop();
+
+        for (auto &[v, weight] : adj[u]) {
+            if (dist[u] + weight < dist[v]) {
+                dist[v] = dist[u] + weight;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    cout << "Shortest distances from park " << start << ":\n";
+    for (int i = 0; i < n; i++) {
+        if (dist[i] == INT_MAX)
+            cout << "Park " << i << ": Unreachable\n";
+        else
+            cout << "Park " << i << ": " << dist[i] << endl;
+    }
+}
+
+void floydWarshall(int n) {
+    vector<vector<int>> graph(n, vector<int>(n, INT_MAX));
+    cout << "Enter the adjacency matrix (use 0 for no path and INF for unreachable paths):\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            int x;
+            cin >> x;
+            if (i == j) graph[i][j] = 0;
+            else if (x != 0) graph[i][j] = x;
+        }
+    }
+
+    vector<vector<int>> dist = graph;
+
+    for (int k = 0; k < n; k++) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (dist[i][k] != INT_MAX && dist[k][j] != INT_MAX) {
+                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j]);
+                }
+            }
+        }
+    }
+
+    cout << "Shortest distances between all pairs of parks:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (dist[i][j] == INT_MAX)
+                cout << "INF ";
+            else
+                cout << dist[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void bfs(int n, int e) {
+    vector<vector<int>> adj(n);
+    cout << "Enter each connection as: park1 park2:\n";
+    for (int i = 0; i < e; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u); // If the graph is undirected
+    }
+
+    int start;
+    cout << "Enter the starting park: ";
+    cin >> start;
+
+    vector<bool> visited(n, false);
+    queue<int> q;
+    q.push(start);
+    visited[start] = true;
+
+    cout << "BFS Traversal starting from park " << start << ": ";
+    while (!q.empty()) {
+        int u = q.front();
+        q.pop();
+        cout << u << " ";
+
+        for (int v : adj[u]) {
+            if (!visited[v]) {
+                visited[v] = true;
+                q.push(v);
+            }
+        }
+    }
+    cout << endl;
+}
+
+void dfsHelper(int u, vector<vector<int>> &adj, vector<bool> &visited) {
+    visited[u] = true;
+    cout << u << " ";
+
+    for (int v : adj[u]) {
+        if (!visited[v]) dfsHelper(v, adj, visited);
+    }
+}
+
+void dfs(int n, int e) {
+    vector<vector<int>> adj(n);
+    cout << "Enter each connection as: park1 park2:\n";
+    for (int i = 0; i < e; i++) {
+        int u, v;
+        cin >> u >> v;
+        adj[u].push_back(v);
+        adj[v].push_back(u); // If the graph is undirected
+    }
+
+    int start;
+    cout << "Enter the starting park: ";
+    cin >> start;
+
+    vector<bool> visited(n, false);
+    cout << "DFS Traversal starting from park " << start << ": ";
+    dfsHelper(start, adj, visited);
+    cout << endl;
+}
+
+int main() {
+    int choice;
+    cout << "Select an algorithm:\n";
+    cout << "1. Kruskal's Algorithm\n";
+    cout << "2. Dijkstra's Algorithm\n";
+    cout << "3. Floyd-Warshall Algorithm\n";
+    cout << "4. BFS\n";
+    cout << "5. DFS\n";
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    int n, e;
+    switch (choice) {
+        case 1:
+            cout << "Enter number of parks (nodes) and connections (edges): ";
+            cin >> n >> e;
+            kruskal(n, e);
+            break;
+        case 2:
+            cout << "Enter number of parks (nodes) and connections (edges): ";
+            cin >> n >> e;
+            dijkstra(n, e);
+            break;
+        case 3:
+            cout << "Enter number of parks (nodes): ";
+            cin >> n;
+            floydWarshall(n);
+            break;
+        case 4:
+            cout << "Enter number of parks (nodes) and connections (edges):"
+            cin >> n >> e;
+            bfs(n, e);
+          case 5:
+            cout << "Enter number of parks (nodes) and connections (edges):"
+            cin >> n >> e;
+            dfs(n, e);
+      default: cout << "Wrong choice."
+                  break;
+}
+}
