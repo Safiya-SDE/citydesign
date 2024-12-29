@@ -176,5 +176,14 @@ Backtracking for Rainwater System Placement:
 Algorithm: Recursively tries combinations of buildings to meet or exceed the required water capacity.
 Function: placeRainwaterSystems explores solutions using recursion and backtracking to check feasibility.
 
+This business case study for Waste Management for a Sustainable City, Allows users to interactively select operations such as greedy algorithms for solar panel placement, 
+dynamic programming for resource allocation, Dijkstra’s algorithm for energy distribution, and 
+backtracking for rainwater system placement, among others. 
+The program covers advanced algorithms like the Knuth-Morris-Pratt (KMP) for string matching, 
+Floyd-Warshall for all-pairs shortest paths, and branch-and-bound for waste collection optimization. 
+
+It also integrates essential data structures such as tries for fast string operations, heaps for task prioritization, and hashing for efficient data retrieval. 
+By this we can demonstrate how these algorithms can help in solving real-world Waste Management Efficiently.
+
 
 
