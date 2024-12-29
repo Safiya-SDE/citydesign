@@ -1,4 +1,4 @@
-//Prakasavan City Design Code//
+//Prakasavan City Design//
 //Safiya Haveripeth//
 //Waste Manangement//
 //SDG 11//
@@ -162,6 +162,19 @@ int main() {
 
     return 0;
 }
+
+//Reflections//
+Greedy Algorithm for Solar Panel Placement:
+Algorithm: Sort rooftops by descending capacity and select panels until the required capacity is met.
+Function: greedySolarPanel takes rooftop capacities and computes the minimum panels needed.
+
+Dijkstra's Algorithm for Energy Distribution:
+Algorithm: Finds the shortest path from a source node to all other nodes in a graph using a priority queue.
+Function: dijkstra calculates the shortest distances, printing them for each node.
+
+Backtracking for Rainwater System Placement:
+Algorithm: Recursively tries combinations of buildings to meet or exceed the required water capacity.
+Function: placeRainwaterSystems explores solutions using recursion and backtracking to check feasibility.
 
 
 
