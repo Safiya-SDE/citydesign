@@ -1,11 +1,167 @@
-/Prakasavan City Design Code/
-/Safiya Haveripeth/
-/Waste Manangement/
-/SDG 11/
+//Prakasavan City Design Code//
+//Safiya Haveripeth//
+//Waste Manangement//
+//SDG 11//
 
-<p>
-    Download our project report <a href="C:\Users\SAFIYA H\City Design Code.cpp" download>here</a>.
-</p>
+//C++ Code//
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <unordered_map>
+#include <algorithm>
+#include <limits>
+#include <string>
+using namespace std;
+
+// Greedy Algorithm for Solar Panel Placement
+void greedySolarPanel(vector<int> rooftops, int capacity) {
+    sort(rooftops.begin(), rooftops.end(), greater<int>());
+    int panels = 0, power = 0;
+    for (int roof : rooftops) {
+        if (power >= capacity) break;
+        power += roof;
+        panels++;
+    }
+    cout << "Minimum panels required: " << panels << "\n";
+}
+
+// Dynamic Programming for Resource Allocation
+int knapsack(vector<int> values, vector<int> weights, int W) {
+    int n = values.size();
+    vector<vector<int>> dp(n + 1, vector<int>(W + 1, 0));
+    for (int i = 1; i <= n; i++) {
+        for (int w = 0; w <= W; w++) {
+            if (weights[i - 1] <= w)
+                dp[i][w] = max(dp[i - 1][w], dp[i - 1][w - weights[i - 1]] + values[i - 1]);
+            else
+                dp[i][w] = dp[i - 1][w];
+        }
+    }
+    return dp[n][W];
+}
+
+// Dijkstra's Algorithm for Energy Distribution
+void dijkstra(int n, vector<vector<pair<int, int>>> &graph, int src) {
+    vector<int> dist(n, INT_MAX);
+    dist[src] = 0;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+    pq.push({0, src});
+
+    while (!pq.empty()) {
+        auto [d, u] = pq.top();
+        pq.pop();
+        if (d > dist[u]) continue;
+        for (auto &[v, w] : graph[u]) {
+            if (dist[u] + w < dist[v]) {
+                dist[v] = dist[u] + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    cout << "Shortest distances from source: \n";
+    for (int i = 0; i < n; i++)
+        cout << "Node " << i << ": " << dist[i] << "\n";
+}
+
+// Backtracking for Rainwater System Placement
+bool placeRainwaterSystems(int idx, vector<int> &buildings, int capacity, vector<int> &solution) {
+    if (capacity <= 0) return true;
+    if (idx >= buildings.size()) return false;
+
+    solution.push_back(buildings[idx]);
+    if (placeRainwaterSystems(idx + 1, buildings, capacity - buildings[idx], solution))
+        return true;
+    solution.pop_back();
+
+    return placeRainwaterSystems(idx + 1, buildings, capacity, solution);
+}
+
+// Main function
+int main() {
+    while (true) {
+        cout << "Choose an option:\n";
+        cout << "1. Solar Panel Placement\n";
+        cout << "2. Resource Allocation\n";
+        cout << "3. Energy Distribution\n";
+        cout << "4. Rainwater System Placement\n";
+        cout << "0. Exit\n";
+        int choice;
+        cin >> choice;
+
+        if (choice == 0) break;
+
+        switch (choice) {
+            case 1: {
+                int n, capacity;
+                cout << "Enter number of rooftops: ";
+                cin >> n;
+                vector<int> rooftops(n);
+                cout << "Enter power capacities of rooftops: ";
+                for (int &roof : rooftops) cin >> roof;
+                cout << "Enter required power capacity: ";
+                cin >> capacity;
+                greedySolarPanel(rooftops, capacity);
+                break;
+            }
+            case 2: {
+                int n, W;
+                cout << "Enter number of resources: ";
+                cin >> n;
+                vector<int> values(n), weights(n);
+                cout << "Enter values of resources: ";
+                for (int &value : values) cin >> value;
+                cout << "Enter weights of resources: ";
+                for (int &weight : weights) cin >> weight;
+                cout << "Enter total capacity: ";
+                cin >> W;
+                cout << "Maximum value achievable: " << knapsack(values, weights, W) << "\n";
+                break;
+            }
+            case 3: {
+                int n, m;
+                cout << "Enter number of nodes and edges: ";
+                cin >> n >> m;
+                vector<vector<pair<int, int>>> graph(n);
+                cout << "Enter edges (u v weight): \n";
+                for (int i = 0; i < m; i++) {
+                    int u, v, w;
+                    cin >> u >> v >> w;
+                    graph[u].push_back({v, w});
+                    graph[v].push_back({u, w}); // Uncomment for undirected graph
+                }
+                int src;
+                cout << "Enter source node: ";
+                cin >> src;
+                dijkstra(n, graph, src);
+                break;
+            }
+            case 4: {
+                int n, capacity;
+                cout << "Enter number of buildings: ";
+                cin >> n;
+                vector<int> buildings(n);
+                cout << "Enter water capacities of buildings: ";
+                for (int &b : buildings) cin >> b;
+                cout << "Enter required water capacity: ";
+                cin >> capacity;
+                vector<int> solution;
+                if (placeRainwaterSystems(0, buildings, capacity, solution)) {
+                    cout << "Solution found: ";
+                    for (int s : solution) cout << s << " ";
+                    cout << "\n";
+                } else {
+                    cout << "No solution possible.\n";
+                }
+                break;
+            }
+            default:
+                cout << "Invalid choice. Try again.\n";
+        }
+    }
+
+    return 0;
+}
 
 
 
