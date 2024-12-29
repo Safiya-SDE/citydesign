@@ -227,16 +227,18 @@ int main() {
             cin >> n;
             floydWarshall(n);
             break;
-        case 4:
-              cout << "Enter number of parks (nodes) and connections (edges): ";
-            cin >> n >> e;
-            bfs(n, e);
-            break;
-        case 5:
-            cout << "Enter number of parks (nodes) and connections (edges): ";
-            cin >> n >> e;
-            dfs(n, e);
-            break;
+      case 4:
+    cout << "Enter number of parks (nodes) and connections (edges): ";
+    cin >> n >> e;
+    bfs(n, e);
+    break;
+
+    case 5:
+    cout << "Enter number of parks (nodes) and connections (edges): ";
+    cin >> n >> e;
+    dfs(n, e);
+    break;
+
         default:
             cout << "Wrong choice.\n";
             break;
