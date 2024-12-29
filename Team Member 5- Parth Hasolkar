@@ -228,14 +228,28 @@ int main() {
             floydWarshall(n);
             break;
         case 4:
-            cout << "Enter number of parks (nodes) and connections (edges):"
+              cout << "Enter number of parks (nodes) and connections (edges): ";
             cin >> n >> e;
             bfs(n, e);
-          case 5:
-            cout << "Enter number of parks (nodes) and connections (edges):"
+            break;
+        case 5:
+            cout << "Enter number of parks (nodes) and connections (edges): ";
             cin >> n >> e;
             dfs(n, e);
-      default: cout << "Wrong choice."
-                  break;
+            break;
+        default:
+            cout << "Wrong choice.\n";
+            break;
+    }
+    return 0;
 }
-}
+
+
+/*This program solves real-world problems, like connecting parks or finding the shortest paths between them. It has five algorithms.
+Kruskal's Algorithm: This finds the minimum cost to connect all the parks. That is, Minimum Spanning Tree.
+Dijkstra's Algorithm: It finds the shortest path from one park to others.
+Floyd-Warshall Algorithm: This finds shortest paths between all pairs of parks.
+BFS: Explores the parks level by level. This algorithm is useful for unweighted graphs.
+DFS: It explores the paths deeply before backtracking.
+We can put in the number of parks, connections, and weights. The program then goes about using the chosen algorithm to calculate output values such as total cost, shortest paths, or traversal orders. 
+It further demonstrates practical applications of data structures and algorithms in planning a city.*/
