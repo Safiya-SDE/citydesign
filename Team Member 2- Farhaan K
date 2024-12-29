@@ -157,4 +157,40 @@ int main() {
 }
 
 //Reflection//
+1. Kruskal's Algorithm
+Purpose: Constructs a Minimum Spanning Tree (MST) to connect nodes with minimal cost.
+Application in Sustainable Housing:
+Design cost-effective road or utility networks (e.g., water, electricity).
+Optimize resource allocation to minimize environmental impact.
+2. Dijkstra's Algorithm
+Purpose: Finds the shortest path from a source to all other nodes in a weighted graph.
+Application in Sustainable Housing:
+Plan energy-efficient routes for transportation within housing communities.
+Identify optimal placement of resources like solar panels or charging stations.
+3. Bellman-Ford Algorithm
+Purpose: Finds shortest paths from a single source node, considering graphs with negative weights.
+Application in Sustainable Housing:
+Analyze and optimize resource flows, such as water distribution.
+Account for external factors like environmental penalties or subsidies.
+4. Merge Sort
+Purpose: Efficiently sorts data, ensuring stable and fast processing.
+Application in Sustainable Housing:
+Organize data such as energy usage or resource demands for decision-making.
+Prioritize construction tasks or materials based on sustainability criteria.
+5. Floyd-Warshall Algorithm
+Purpose: Finds shortest paths between all pairs of nodes in a graph.
+Application in Sustainable Housing:
+Evaluate connectivity and efficiency of utility or transport networks.
+Simulate community layouts for minimal energy or time usage.
+6. KMP (Knuth-Morris-Pratt Algorithm)
+Purpose: Efficient string matching to find patterns in data.
+Application in Sustainable Housing:
+Detect patterns in energy usage or maintenance logs.
+Identify recurring faults or inefficiencies in housing systems.
+Illustrated Benefits:
+By integrating these algorithms:
 
+Cost Savings: Reduced infrastructure costs through efficient network designs.
+Energy Efficiency: Optimal resource and transportation planning.
+Data Analysis: Streamlined analysis of usage patterns and demands.
+Sustainability: Minimized waste and environmental impact.
